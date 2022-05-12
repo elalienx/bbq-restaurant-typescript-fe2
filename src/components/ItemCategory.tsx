@@ -2,11 +2,11 @@
 import iCategory from "interfaces/iCategory";
 
 // Interface
-interface props {
+interface iProps {
   item: iCategory;
 }
 
-export default function ItemCategory({ item }: props) {
+export default function ItemCategory({ item }: iProps) {
   return (
     <article className="item-category">
       <img src={item.imageURL} alt="Category thumbnail" />
