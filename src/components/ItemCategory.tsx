@@ -1,4 +1,7 @@
 // Project files
+import { Link } from "react-router-dom";
+
+// Project files
 import iCategory from "interfaces/iCategory";
 
 // Interface
@@ -7,13 +10,16 @@ interface iProps {
 }
 
 export default function ItemCategory({ item }: iProps) {
+  // Properties
+  const link = `/menu/${item.id}`;
+
   return (
-    <article className="item-category">
+    <Link to={link} className="item-category">
       <img src={item.imageURL} alt="Category thumbnail" />
       <div className="content">
         <h3>{item.title}</h3>
         <p>{item.description}</p>
       </div>
-    </article>
+    </Link>
   );
 }

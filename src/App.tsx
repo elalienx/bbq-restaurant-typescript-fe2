@@ -6,6 +6,8 @@ import AdminCategories from "pages/AdminCategories";
 import AdminProducts from "pages/AdminProducts";
 import Home from "pages/Home";
 import Menu from "pages/Menu";
+import Product from "pages/Product";
+import Products from "pages/Products";
 import { ItemsProvider } from "state/ItemsContext";
 import { ModalProvider } from "state/ModalContext";
 import "styles/style.sass";
@@ -19,6 +21,8 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/menu" element={<Menu />} />
+              <Route path="/menu/:categoryId" element={<Products />} />
+              <Route path="/product/:productId" element={<Product />} />
               <Route path="/admin" element={<AdminCategories />} />
               <Route path="/admin/:categoryId" element={<AdminProducts />} />
             </Routes>
