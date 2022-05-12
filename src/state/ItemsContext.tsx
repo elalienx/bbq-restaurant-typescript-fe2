@@ -3,13 +3,14 @@ import { createContext, ReactNode, useContext, useState } from "react";
 
 // Project files
 import iCategory from "interfaces/iCategory";
+import iProduct from "interfaces/iProduct";
 
 // Interface
 interface iProps {
   children: ReactNode;
 }
 interface iValues {
-  items: iCategory[];
+  items: iCategory[] | iProduct[];
   setItems: Function;
   addItem: Function;
   editItem: Function;
@@ -35,11 +36,11 @@ export function ItemsProvider({ children }: iProps) {
   const value: iValues = { items, setItems, addItem, editItem, deleteItem };
 
   // Methods
-  function addItem(newItem: iCategory) {
+  function addItem(newItem: iCategory | iProduct) {
     setItems([...items, newItem]);
   }
 
-  function editItem(editedItem: iCategory) {
+  function editItem(editedItem: iCategory | iProduct) {
     const clonedItems = [...items];
     const index = clonedItems.findIndex((item) => item.id === editedItem.id);
 
