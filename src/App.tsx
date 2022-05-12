@@ -2,12 +2,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Project files
-import "styles/style.sass";
-import { ItemsProvider } from "state/ItemsContext";
-import { ModalProvider } from "state/ModalContext";
-import Home from "pages/Home";
 import AdminCategories from "pages/AdminCategories";
 import AdminProducts from "pages/AdminProducts";
+import Home from "pages/Home";
+import Menu from "pages/Menu";
+import { ItemsProvider } from "state/ItemsContext";
+import { ModalProvider } from "state/ModalContext";
+import "styles/style.sass";
 
 export default function App() {
   return (
@@ -17,8 +18,9 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/menu" element={<Menu />} />
               <Route path="/admin" element={<AdminCategories />} />
-              <Route path="/admin/:categoryId" element={<Home />} />
+              <Route path="/admin/:categoryId" element={<AdminProducts />} />
             </Routes>
           </BrowserRouter>
         </ItemsProvider>
