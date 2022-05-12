@@ -1,0 +1,23 @@
+@import "../base/variables"
+
+.input-field
+  display: block
+  font-size: $default-text
+
+  div
+    font-weight: bold
+    margin-bottom: $space-small
+
+  input
+    box-sizing: border-box
+    width: 280px
+    height: 48px
+    padding: $space-small $space-medium
+    background-color: $color-background
+    border: none
+    border-radius: $space-small
+    font-size: $default-text
+
+@media (min-width: $media-desktop)
+  .input-field input
+    width: 440px

@@ -1,0 +1,26 @@
+@import "../base/variables"
+
+.item-admin-product
+    display: flex
+    align-items: center
+    justify-content: space-around
+    gap: $space-small
+
+    .spacer
+        flex-grow: 1
+    
+    img
+        $size: 44px
+        width:  $size
+        height:  $size
+        border-radius: $space-small
+        object-fit: cover
+
+@media (min-width: $media-desktop)
+    .item-admin-product 
+        gap: $space-medium
+
+        img
+            $size: 64px
+            width:  $size
+            height: $size

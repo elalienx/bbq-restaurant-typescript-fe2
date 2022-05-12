@@ -1,0 +1,21 @@
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Work+Sans:wght@300;600&display=swap"
+@import "./variables"
+
+body
+  box-sizing: border-box
+  margin: $space-medium
+  font-family: 'Open Sans', sans-serif
+  font-family: 'Work Sans', sans-serif
+  font-smooth: always
+  color: $color-text
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+img
+  max-width: 100%
+  height: auto
+
+@media (min-width: $media-desktop)
+  body
+    max-width: 960px
+    margin: $space-ultra auto

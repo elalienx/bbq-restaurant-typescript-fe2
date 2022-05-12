@@ -1,0 +1,10 @@
+[
+  {
+    "key": "compare",
+    "autofocus": true,
+    "label": "Write the name of the item",
+    "placeholder": "Type the exactly as it is",
+    "required": true,
+    "type": "text"
+  }
+]

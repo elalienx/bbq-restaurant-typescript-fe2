@@ -1,0 +1,45 @@
+@import "../base/variables"
+
+.button
+    box-sizing: border-box
+    margin-bottom: $space-medium
+    display: inline-block
+    vertical-align: middle
+    padding: $space-small $space-medium
+    height: 48px
+    line-height: 24px
+    background-color: white
+    border: none
+    border-radius: $space-small
+    color: black
+    font-size: $default-text
+    text-decoration: none
+
+.button.primary 
+    background-color: $color-text
+    color: white
+
+    &:hover
+        background-color: lighten($color-text, 15%)
+
+.button.secondary
+    background-color: white
+    color: $color-text
+    border: solid 2px $color-text
+
+    &:hover
+        border-color: lighten($color-text, 15%)
+        color: lighten($color-text, 15%)
+        text-decoration: underline
+
+
+.button.icon
+    border: solid 2px black
+
+.button.danger
+    background-color: $color-danger
+    color: white
+
+    &:hover
+        text-decoration: underline
+        border-color: lighten($color-danger, 15%)

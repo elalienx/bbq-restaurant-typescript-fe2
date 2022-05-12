@@ -1,0 +1,20 @@
+@import "../base/variables"
+
+.button.add-category
+    height: 200px // same as the image in item category
+    background-color: white
+    color: $color-text
+    border: dashed 4px $color-text
+    border-radius: $space-small
+
+    .icon
+        font-size: 36px
+        margin-bottom: $space-small
+
+    &:hover
+        text-decoration: underline
+        border-color: lighten($color-text, 15%)
+
+@media (min-width: $media-desktop)
+    .button.add-category
+        height: 333px

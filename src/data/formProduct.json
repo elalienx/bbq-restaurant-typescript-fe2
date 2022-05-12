@@ -1,0 +1,34 @@
+[
+  {
+    "key": "title",
+    "autofocus": true,
+    "label": "Title",
+    "placeholder": "Example: Pork",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "text",
+    "autofocus": false,
+    "label": "Description",
+    "placeholder": "Example: Fatty piggies with sauce!",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "price",
+    "autofocus": false,
+    "label": "Price",
+    "placeholder": "Example: 500",
+    "required": true,
+    "type": "number"
+  },
+  {
+    "key": "imageURL",
+    "autofocus": false,
+    "label": "Image URL",
+    "placeholder": "Example: www.google.com/image.png",
+    "required": true,
+    "type": "text"
+  }
+]

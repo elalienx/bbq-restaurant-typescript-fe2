@@ -1,0 +1,15 @@
+@import "../base/variables"
+  
+#admin-categories
+  .grid
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    column-gap: $space-small
+    row-gap: $space-small
+
+@media (min-width: $media-desktop)
+  #admin-categories
+    .grid
+      grid-template-columns: repeat(4, 1fr)
+      column-gap: $space-medium
+      row-gap: $space-medium

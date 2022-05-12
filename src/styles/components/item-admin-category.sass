@@ -1,0 +1,29 @@
+@import "../base/variables"
+
+.item-admin-category
+    .content
+        position: relative
+        overflow: hidden
+        margin-bottom: $space-small
+        border-radius: $space-small
+
+        img
+            display: block
+            height: 200px
+            object-fit: cover
+
+        .buttons
+            position: absolute
+            bottom: $space-small
+            right: $space-small
+    
+    .title
+        color: $color-text
+        text-decoration: none
+        font-size: $default-text
+        font-weight: bold
+
+
+@media (min-width: $media-desktop)
+    .item-admin-category .content img
+        height: 333px
