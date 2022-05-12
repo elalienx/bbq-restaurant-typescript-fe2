@@ -29,7 +29,6 @@ export default function Menu() {
   }, []);
 
   function onSuccess(data: iCategory[]) {
-    // @ts-ignore 🩹🤕
     setItems(data);
     setStatus(eStatus.Loaded);
   }
@@ -40,7 +39,6 @@ export default function Menu() {
   }
 
   // Components
-  // @ts-ignore 🩹🤕
   const Items = items.map((item) => <ItemCategory key={item.id} item={item} />);
 
   // Safeguards
