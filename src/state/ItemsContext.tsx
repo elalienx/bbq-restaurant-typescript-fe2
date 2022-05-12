@@ -1,5 +1,5 @@
 // NPM packages
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 // Project files
 import iCategory from "interfaces/iCategory";

@@ -1,22 +1,33 @@
 // NPM packages
-import { createContext, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
+
+// Interfaces
+interface iProps {
+  children: ReactNode;
+}
+interface iValues {
+  modal: ReactNode | null;
+  setModal: Function;
+}
 
 // Properties
-const Context = createContext(null);
+const initialValues: iValues = {
+  modal: null,
+  setModal: () => {},
+};
+const Context = createContext(initialValues);
 
 // Methods
-// For the parent
-export function ModalProvider({ children }) {
+export function ModalProvider({ children }: iProps) {
   // Local state
   const [modal, setModal] = useState(null);
 
   // Properties
-  const value = { modal, setModal };
+  const value: iValues = { modal, setModal };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
 
-// For the children
 export function useModal() {
   const context = useContext(Context);
   const errorText =
