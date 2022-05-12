@@ -15,7 +15,6 @@ export default function App() {
       <ModalProvider>
         <ItemsProvider>
           <BrowserRouter>
-            <h1>BBQ Restaurant</h1>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/admin" element={<AdminCategories />} />
