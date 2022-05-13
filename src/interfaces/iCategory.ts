@@ -1,6 +1,6 @@
 export default interface iCategory {
   id: string;
-  description: string;
+  text: string;
   imageURL: string;
   title: string;
 }

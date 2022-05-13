@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // Project files
 import { useItems } from "state/ItemsContext";
 import eStatus from "interfaces/eStatus";
-import ItemCategory from "components/ItemCategory";
+import ItemProduct from "components/ItemProduct";
 import { readCollection } from "scripts/fireStore";
 import iProduct from "interfaces/iProduct";
 import { useParams } from "react-router-dom";
@@ -41,7 +41,10 @@ export default function Products() {
   }
 
   // Components
-  const Items = items.map((item) => <ItemCategory key={item.id} item={item} />);
+  const Items = items.map((item) => (
+    // @ts-ignore
+    <ItemProduct key={item.id} item={item} categoryId={categoryId} />
+  ));
 
   // Safeguards
   if (status === eStatus.Loading) return <p>⏱</p>;

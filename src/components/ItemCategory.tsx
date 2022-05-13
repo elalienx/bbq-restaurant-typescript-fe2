@@ -18,7 +18,7 @@ export default function ItemCategory({ item }: iProps) {
       <img src={item.imageURL} alt="Category thumbnail" />
       <div className="content">
         <h3>{item.title}</h3>
-        <p>{item.description}</p>
+        <p>{item.text}</p>
       </div>
     </Link>
   );
