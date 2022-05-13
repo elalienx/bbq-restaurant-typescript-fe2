@@ -7,7 +7,12 @@ import { useModal } from "state/ModalContext";
 export default function Modal() {
   const { modal, setModal } = useModal();
 
+  // Properties
+  const id = "portal";
+  const element = document.getElementById(id);
+
   // Safeguard
+  if (element === null) throw new Error(`No div with id ${id} on index.html`);
   if (modal === null) return null;
 
   return createPortal(
@@ -17,6 +22,6 @@ export default function Modal() {
       </div>
       <div className="content">{modal}</div>
     </div>,
-    document.getElementById("portal")
+    element
   );
 }

@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Project files
+import Modal from "components/Modal";
 import AdminCategories from "pages/AdminCategories";
 import AdminProducts from "pages/AdminProducts";
 import Home from "pages/Home";
@@ -27,6 +28,7 @@ export default function App() {
               <Route path="/admin/:categoryId" element={<AdminProducts />} />
             </Routes>
           </BrowserRouter>
+          <Modal />
         </ItemsProvider>
       </ModalProvider>
     </div>
