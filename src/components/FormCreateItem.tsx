@@ -41,7 +41,7 @@ export default function FormCreateItem({ formData, path }: iProps) {
     if (isDone) onSucess(form, id);
   }
 
-  function onSucess(item, id: string) {
+  function onSucess(item: object, id: string) {
     item.id = id;
     addItem(item);
     setModal(null);
