@@ -2,13 +2,19 @@
 import { useState } from "react";
 
 // Project files
-import InputField from "./InputField";
+import iFields from "interfaces/iField";
 import { createDocumentWithId, readDocument } from "scripts/fireStore";
 import textToURL from "scripts/textToURL";
 import { useItems } from "state/ItemsContext";
 import { useModal } from "state/ModalContext";
+import InputField from "./InputField";
 
-export default function FormCreateItem({ formData, path }) {
+interface iProps {
+  formData: iFields[];
+  path: string;
+}
+
+export default function FormCreateItem({ formData, path }: iProps) {
   // Global state
   const { addItem } = useItems();
   const { setModal } = useModal();
@@ -17,7 +23,7 @@ export default function FormCreateItem({ formData, path }) {
   const [form, setForm] = useState({});
 
   // Methods
-  async function onSubmit(event) {
+  async function onSubmit(event: React.FormEvent) {
     event.preventDefault();
 
     // 1 Check if a file with the same id exist
@@ -35,13 +41,13 @@ export default function FormCreateItem({ formData, path }) {
     if (isDone) onSucess(form, id);
   }
 
-  function onSucess(item, id) {
+  function onSucess(item, id: string) {
     item.id = id;
     addItem(item);
     setModal(null);
   }
 
-  function onFail(error) {
+  function onFail(error: Error) {
     console.error(error);
     alert("Could not create a document, check that the name is not reapeated.");
   }
@@ -52,7 +58,7 @@ export default function FormCreateItem({ formData, path }) {
   ));
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form className="form" onSubmit={(event) => onSubmit(event)}>
       <h2>Add item</h2>
       {InputFields}
       <button className="button primary">Add new item</button>
