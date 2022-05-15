@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 import EmptyText from "components/EmptyTextCategory";
 import ItemCategory from "components/ItemAdminCategory";
 import FormCreateItem from "components/FormCreateItem";
-import formData from "data/formCategory.json";
+import formCategory from "data/formCategory.json";
 import eStatus from "interfaces/eStatus";
 import { readCollection } from "scripts/fireStore";
 import { useItems } from "state/ItemsContext";
 import { useModal } from "state/ModalContext";
+import iField from "interfaces/iField";
 
 export default function AdminCategories() {
   // Global state
@@ -20,6 +21,7 @@ export default function AdminCategories() {
   const [status, setStatus] = useState(eStatus.Loading);
 
   // Properties
+  const formData: iField[] = JSON.parse(formCategory);
   const path = "menu";
 
   // Methods

@@ -1,7 +1,7 @@
 [
   {
     "key": "title",
-    "autofocus": true,
+    "autoFocus": true,
     "label": "Title",
     "placeholder": "Example: Pork",
     "required": true,
@@ -9,7 +9,7 @@
   },
   {
     "key": "text",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Description",
     "placeholder": "Example: Fatty piggies with sauce!",
     "required": true,
@@ -17,7 +17,7 @@
   },
   {
     "key": "imageURL",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Image URL",
     "placeholder": "Example: www.google.com/image.png",
     "required": true,
