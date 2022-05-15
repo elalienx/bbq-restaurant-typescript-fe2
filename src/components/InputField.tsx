@@ -1,9 +1,9 @@
-import { ChangeEvent } from "react";
+import { FormEvent } from "react";
 import iFields from "interfaces/iField";
 
 interface iProps {
   setup: iFields;
-  state: [string, () => {}];
+  state: [object, Function];
 }
 
 export default function InputField({ setup, state }: iProps) {
@@ -11,9 +11,9 @@ export default function InputField({ setup, state }: iProps) {
   const [getter, setter] = state;
 
   // Methods
-  function onChange(event: ChangeEvent) {
+  function onChange(event: FormEvent<HTMLInputElement>) {
     const clonedItem = { ...getter };
-    clonedItem[key] = event.target.value;
+    clonedItem[key] = event.currentTarget.value;
 
     setter(clonedItem);
   }
