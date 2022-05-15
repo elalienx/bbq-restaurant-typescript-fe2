@@ -2,21 +2,25 @@
 import { Link } from "react-router-dom";
 
 // Project files
-import { useModal } from "state/ModalContext";
-import formData from "data/formCategory";
 import FormUpdate from "components/FormUpdateItem";
 import FormDelete from "components/FormDeleteItem";
+import formData from "data/formCategory.json";
+import iCategory from "interfaces/iCategory";
+import { useModal } from "state/ModalContext";
 
-export default function ItemAdminCategory({ item, path }) {
-  const { title, imageURL } = item;
+interface iProps {
+  item: iCategory;
+  path: string;
+}
 
+export default function ItemAdminCategory({ item, path }: iProps) {
   // Global state
   const { setModal } = useModal();
 
   // Properties
   const link = `/admin/${item.id}`;
 
-  // Compoennt
+  // Components
   const ItemUpdate = <FormUpdate item={item} formData={formData} path={path} />;
   const ItemDelete = <FormDelete item={item} path={path} />;
 
@@ -24,7 +28,7 @@ export default function ItemAdminCategory({ item, path }) {
     <article className="item-admin-category">
       <div className="content">
         <Link to={link}>
-          <img src={imageURL} />
+          <img src={item.imageURL} />
         </Link>
         <div className="buttons">
           <button className="button icon" onClick={() => setModal(ItemUpdate)}>
@@ -36,7 +40,7 @@ export default function ItemAdminCategory({ item, path }) {
         </div>
       </div>
       <Link className="title" to={link}>
-        {title}
+        {item.title}
       </Link>
     </article>
   );

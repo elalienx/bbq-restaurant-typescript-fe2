@@ -1,10 +1,16 @@
 // Project files
-import formData from "data/formProduct";
 import FormUpdate from "components/FormUpdateItem";
 import FormDelete from "components/FormDeleteItem";
+import formData from "data/formProduct.json";
+import iProduct from "interfaces/iProduct";
 import { useModal } from "state/ModalContext";
 
-export default function ItemAdminProduct({ path, item }) {
+interface iProps {
+  item: iProduct;
+  path: string;
+}
+
+export default function ItemAdminProduct({ item, path }: iProps) {
   // Global state
   const { setModal } = useModal();
 
@@ -14,7 +20,7 @@ export default function ItemAdminProduct({ path, item }) {
 
   return (
     <article className="item-admin-product">
-      <img src={item.imageURL} alt={item.description} />
+      <img src={item.imageURL} alt={item.text} />
       <span>{item.title}</span>
       <span className="spacer"></span>
       <b>{item.price}kr</b>
